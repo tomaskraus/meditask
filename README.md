@@ -2,7 +2,7 @@
 
 "medical treatment TODO and scheduler"
 
-Řešení zadání [TypeScript_MongoDB Developer]("./assignment/Zadání - TypeScript_MongoDB Developer.pdf")
+Řešení zadání [TypeScript_MongoDB Developer](./assignment/Zadání - TypeScript_MongoDB Developer.pdf)
 
 ## Instalace
 
