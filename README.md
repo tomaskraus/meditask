@@ -2,7 +2,8 @@
 
 "medical treatment TODO and scheduler"
 
-Řešení zadání [TypeScript_MongoDB Developer](./assignment/Zadání - TypeScript_MongoDB Developer.pdf)
+Řešení zadání [TypeScript_MongoDB Developer](assignment/Zadání - TypeScript_MongoDB Developer.pdf)
+[TypeScript_MongoDB Developer](assignment/Zadání_TypeScript_MongoDB_Developer.pdf)
 
 ## Instalace
 
@@ -46,5 +47,5 @@ http://127.0.0.1:3000/api-json
 
 ## DB
 
-connection string: `mongodb://localhost:27017`
+connection string: `mongodb://localhost:27017`  
 db name: `test2`
