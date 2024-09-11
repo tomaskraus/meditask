@@ -40,6 +40,10 @@ online API dokumentace:
 
 http://127.0.0.1:3000/api
 
+OpenAPI JSON:
+
+http://127.0.0.1:3000/api-json
+
 ## DB
 
 connection string: `mongodb://localhost:27017`
