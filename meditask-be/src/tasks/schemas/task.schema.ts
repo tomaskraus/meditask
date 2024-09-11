@@ -1,9 +1,15 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
+export type TaskDocument = HydratedDocument<Task>;
+
+@Schema()
 export class Task {
   id: string;
+
+  @Prop()
   caption: string;
+  @Prop()
   description: string; // a long description of the task
   //   startDate: Date;
   //   endDate: Date;
@@ -16,3 +22,5 @@ export class Task {
   //    */
   //   schedule: string;
 }
+
+export const TaskSchema = SchemaFactory.createForClass(Task);
