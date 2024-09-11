@@ -1,6 +1,4 @@
-import { Task } from '../interfaces/task.interface';
+import { Task } from '../task.schema';
+import { OmitType } from '@nestjs/mapped-types';
 
-export class CreateTaskDto implements Task {
-  readonly caption: string;
-  readonly description: string; // a long description of the task
-}
+export class CreateTaskDto extends OmitType(Task, ['id']) {}

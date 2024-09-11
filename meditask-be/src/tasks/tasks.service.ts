@@ -1,15 +1,16 @@
 import { Injectable } from '@nestjs/common';
 // import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
-import { Task, TaskWithId } from './interfaces/task.interface';
+import { CreateTaskDto } from './dto/create-task.dto';
+import { Task } from './task.schema';
 import { IdResponse } from './interfaces/id-response.interface';
 
 @Injectable()
 export class TasksService {
-  private tasks: TaskWithId[] = [];
+  private tasks: Task[] = [];
   private idCounter = 1;
 
-  create(task: Task): IdResponse {
+  create(task: CreateTaskDto): IdResponse {
     const id = '' + this.idCounter++;
     this.tasks.push({ ...task, id });
     return { message: 'Task created', id };

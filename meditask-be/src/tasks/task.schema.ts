@@ -1,4 +1,8 @@
-export interface Task {
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { HydratedDocument } from 'mongoose';
+
+export class Task {
+  id: string;
   caption: string;
   description: string; // a long description of the task
   //   startDate: Date;
@@ -11,8 +15,4 @@ export interface Task {
   //    * see https://github.com/kelektiv/node-cron/tree/main
   //    */
   //   schedule: string;
-}
-
-export interface TaskWithId extends Task {
-  id: string;
 }
