@@ -48,7 +48,7 @@ export class Task {
     isArray: true,
     default: [],
   })
-  notificationMinutes: number;
+  notificationMinutes: number[];
 
   /**
    * string in cron time syntax
