@@ -2,6 +2,8 @@
 
 "medical treatment TODO and scheduler"
 
+Jedná se o backendovou aplikaci, poskytující RESTové API ohledně úkolů od lékaře pro jeho pacienty.
+
 Řešení zadání [TypeScript_MongoDB Developer](assignment/Zadání - TypeScript_MongoDB Developer.pdf)
 [TypeScript_MongoDB Developer](assignment/Zadání_TypeScript_MongoDB_Developer.pdf)
 
@@ -77,3 +79,23 @@ K verzování používám [Git](https://git-scm.com/). Snažím se o verzovací 
 Používám _Feature Branches_.
 
 Platforma: Linux - [Ubuntu](https://ubuntu.com/)
+
+## Zbytek Řešení
+
+Zde odpovídám na věci v zadání, které nebyly určeny k naprogramování, nebo jsem je nestihnul. Seznam budu průběžně doplňovat, ale na otázky jsem připraven reagovat ihned.
+
+#### REST API pro mobilní aplikaci:
+
+#### Generování jednotlivých úkolů:
+
+### K Promyšlení
+
+#### Označení úkolu jako splněného:
+
+#### Notifikace:
+
+#### Autentizace:
+
+#### Synchronizace úkolů do mobilní aplikace:
+
+#### Testování:
