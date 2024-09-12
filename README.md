@@ -73,6 +73,7 @@ Aplikace nabízí REST API. K automatickému generování dokumentace jsem použ
 IDE: [VS Code](https://code.visualstudio.com/)
 formatter: [Prettier](https://prettier.io/)
 
-K verzování používám Git. Snažím se o verzovací komentáře podle [Conventional Commits](https://www.conventionalcommits.org)
+K verzování používám [Git](https://git-scm.com/). Snažím se o verzovací komentáře podle [Conventional Commits](https://www.conventionalcommits.org)  
+Používám _Feature Branches_.
 
 Platforma: Linux - [Ubuntu](https://ubuntu.com/)
