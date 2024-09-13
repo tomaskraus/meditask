@@ -86,7 +86,28 @@ Zde odpovídám na věci v zadání, které nebyly určeny k naprogramování, n
 
 #### REST API pro mobilní aplikaci:
 
+Návrh jsem udělal tak, že budou existovat dva druhy datových objektů:
+
+1. **Task** Úkol. Má svůj rozvrh.
+2. **TaskRun** Konkrétní běh úkolu, podle rozvrhu objektu Task.
+
+Jediné, co se drží v paměti klientského zařízení (mobilu, tabletu), jsou instance _TaskRun_.
+
+Struktura instance TaskRun (příklad):
+```json5
+{
+  "taskId": "66e1a94df40f867d3ba31c35",         // Task.id
+  "caption": "Antimuchin",                      // Task.caption
+  "description": "Take the half of the pill.",  // Task.description
+  "eventTime": "2024-09-11T13:15:00.000Z",      // Time this TaskRun shows at the user's device
+  "notificationMinutes": [15, 30],              // Task.notificationMinutes
+  "fulfilled": true                             // Shows that user has fulfilled this taskRun. Defaults to false. User sets this to true.
+}
+```
+
 #### Generování jednotlivých úkolů:
+
+V době insertu Tasku se podle jeho cronu (prop "schedule") vygenerují instance TaskRun s konkrétními časy a uloží se do DB.
 
 ### K Promyšlení
 
