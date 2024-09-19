@@ -50,7 +50,7 @@ export class TaskRun {
     description: `Shows that user has fulfilled this taskRun.`,
   })
   @Prop()
-  fulfilled: string;
+  fulfilled: boolean;
 }
 
 export const TaskRunSchema = SchemaFactory.createForClass(TaskRun);
