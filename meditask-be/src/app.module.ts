@@ -3,9 +3,11 @@ import { Module } from '@nestjs/common';
 // import { AppController } from './app.controller';
 // import { AppService } from './app.service';
 import { TasksModule } from './tasks/tasks.module';
+import { TaskRunsModule } from './task-runs/task-runs.module';
 
 @Module({
-  imports: [TasksModule],
+  imports: [TasksModule, TaskRunsModule],
+  // imports: [TasksModule],
   // controllers: [AppController],
   // providers: [AppService],
 })
