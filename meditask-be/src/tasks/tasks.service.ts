@@ -6,21 +6,23 @@ import { UpdateTaskDto } from './dto/update-task.dto';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { IdResponse } from './interfaces/id-response.interface';
 import { AffectOneItemResponse } from './interfaces/affect-one-item-response.interface';
-import { TaskRunsService } from 'src/task-runs/task-runs.service';
+
+//https://stackoverflow.com/questions/56703570/unable-to-run-tests-because-nest-cannot-find-a-module
+import { TaskRunsService } from '../task-runs/task-runs.service';
 
 @Injectable()
 export class TasksService {
   constructor(
     @Inject('TASK_MODEL') private taskModel: Model<Task>,
-    private readonly taskRunService: TaskRunsService,
+    private readonly taskRunsService: TaskRunsService,
   ) {}
 
   async create(task: CreateTaskDto): Promise<IdResponse> {
     const res = await this.taskModel.create(task);
     await res.save();
     const taskCreated = { ...task, id: res.id };
-    await this.taskRunService.insertMany(
-      this.taskRunService.generateFromTask(taskCreated),
+    await this.taskRunsService.insertMany(
+      this.taskRunsService.generateFromTask(taskCreated),
     );
     return { message: 'Task created', id: res.id };
   }

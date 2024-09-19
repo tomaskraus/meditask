@@ -3,7 +3,7 @@ import { TasksController } from './tasks.controller';
 import { TasksService } from './tasks.service';
 import { tasksProviders } from './tasks.providers';
 import { DatabaseModule } from '../database/database.module';
-import { TaskRunsModule } from 'src/task-runs/task-runs.module';
+import { TaskRunsModule } from '../task-runs/task-runs.module';
 
 @Module({
   imports: [DatabaseModule, TaskRunsModule],

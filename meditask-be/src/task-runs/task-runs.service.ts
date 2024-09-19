@@ -4,7 +4,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CreateTaskRunDto } from './dto/create-task-run.dto';
 import { AffectTaskIdResponse } from './interfaces/affect-task-id-response.interface';
 import { CountResponse } from './interfaces/count-response.interface';
-import { Task } from 'src/tasks/schemas/task.schema';
+import { Task } from '../tasks/schemas/task.schema';
 
 @Injectable()
 export class TaskRunsService {
