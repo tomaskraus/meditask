@@ -37,15 +37,15 @@ npm start
 
 endpoint aplikace:
 
-http://127.0.0.1:3000/tasks
+http://localhost:3001/tasks
 
 online API dokumentace:
 
-http://127.0.0.1:3000/api
+http://localhost:3001/api
 
 OpenAPI JSON:
 
-http://127.0.0.1:3000/api-json
+http://localhost:3001/api-json
 
 ### DB
 
