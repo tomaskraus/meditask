@@ -1,12 +1,10 @@
 import MyButton from './MyButton'
 import TaskItem from './TaskItem';
-import { TasksContext, TaskDispatchContext } from './TasksProvider';
-
-import { useContext } from 'react';
+import {useTasks, useTaskDispatch } from './TasksProvider';
 
 export function ItemList() {
-    const items = useContext(TasksContext)
-    const dispatch = useContext(TaskDispatchContext)
+    const items = useTasks()
+    const dispatch = useTaskDispatch()
     const listItems = items.map((item) =>
         <li key={item._id}>
             <TaskItem {...item} />
