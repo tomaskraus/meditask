@@ -27,20 +27,11 @@ function App() {
 
   const [tasks, dispatch] = useReducer(taskReducer, data)
 
-  const handleDeleteTask = _id => {
-    // alert(`delete: ${_id}`)
-    dispatch({
-      type: 'deleted_task',
-      id: _id
-    })
-  }
-
-
   return (
     <div className='App'>
       <h1>Medical Tasks</h1>
       <>
-        <ItemList items={tasks} onDelete={handleDeleteTask} />
+        <ItemList items={tasks} dispatch={dispatch} />
       </>
     </div>
   );
