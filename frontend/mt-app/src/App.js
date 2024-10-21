@@ -5,11 +5,6 @@ import MyButton from './MyButton'
 import TaskItem from './TaskItem';
 
 
-
-
-
-
-
 const data = [
   {
     "_id": "670925f3f582f10ffd3c5ab0",
@@ -35,7 +30,7 @@ function App() {
 
   const [tasks, setTasks] = useState(data)
 
-  const deleteTask = _id => {
+  const handleDeleteTask = _id => {
     // alert(`delete: ${_id}`)
     setTasks(tasks.filter(d => d._id !== _id))
   }
@@ -56,7 +51,7 @@ function App() {
     <div className='App'>
       <h1>Medical Tasks</h1>
       <>
-        <ItemList items={tasks} onDelete={deleteTask} />
+        <ItemList items={tasks} onDelete={handleDeleteTask} />
       </>
     </div>
   );
