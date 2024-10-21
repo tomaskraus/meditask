@@ -1,9 +1,6 @@
 import './App.css';
 import { useState } from 'react'
-
-import MyButton from './MyButton'
-import TaskItem from './TaskItem';
-
+import { ItemList } from './ItemList'
 
 const data = [
   {
@@ -35,16 +32,7 @@ function App() {
     setTasks(tasks.filter(d => d._id !== _id))
   }
 
-  function ItemList({ items = [], onDelete }) {
-    const listItems = items.map((item) =>
-      <li key={item._id}>
-        <TaskItem {...item} />
-        <MyButton caption='delete' onClick={() => onDelete(item._id)} />
-      </li>
-    )
 
-    return <ul>{listItems}</ul>
-  }
 
 
   return (
