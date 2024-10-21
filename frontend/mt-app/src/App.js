@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react'
+import { useReducer } from 'react'
 import { ItemList } from './ItemList'
 
 const data = [
@@ -25,14 +25,15 @@ const data = [
 
 function App() {
 
-  const [tasks, setTasks] = useState(data)
+  const [tasks, dispatch] = useReducer(taskReducer, data)
 
   const handleDeleteTask = _id => {
     // alert(`delete: ${_id}`)
-    setTasks(tasks.filter(d => d._id !== _id))
+    dispatch({
+      type: 'deleted_task',
+      id: _id
+    })
   }
-
-
 
 
   return (
@@ -46,4 +47,16 @@ function App() {
 }
 
 
+const taskReducer = (tasks, action) => {
+  switch (action.type) {
+    case 'deleted_task': {
+      return tasks.filter(t => t._id !== action.id)
+    }
+    default: {
+      throw new Error(`Unknown task action type: ${action.type}`)
+    }
+  }
+}
+
 export default App;
+
