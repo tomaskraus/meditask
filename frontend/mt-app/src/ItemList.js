@@ -34,7 +34,7 @@ export function ItemList() {
                 active = false;
             }
         }
-    }, [items])
+    }, [])
 
     const listItems = items.map((item) =>
         <li key={item._id}>
