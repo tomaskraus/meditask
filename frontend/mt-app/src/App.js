@@ -1,5 +1,5 @@
 import './App.css';
-import { ItemList } from './ItemList'
+import { TaskList } from './TaskList'
 import { TaskProvider } from './TasksProvider';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className='App'>
       <h1>Medical Tasks</h1>
       <TaskProvider>
-        <ItemList />
+        <TaskList />
       </TaskProvider>
     </div>
   );

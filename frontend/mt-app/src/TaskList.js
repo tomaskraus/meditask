@@ -3,7 +3,7 @@ import MyButton from './MyButton'
 import TaskItem from './TaskItem';
 import { useTasks, useTaskDispatch } from './TasksProvider';
 
-export function ItemList() {
+export function TaskList() {
     const items = useTasks()
     const dispatch = useTaskDispatch()
 
