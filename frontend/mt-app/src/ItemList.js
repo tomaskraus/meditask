@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchTasks } from './Fetcher';
 
 import MyButton from './MyButton'
@@ -10,31 +10,13 @@ let tasksWereFetched = false;
 export function ItemList() {
     const items = useTasks()
     const dispatch = useTaskDispatch()
+    useTaskData((data) => {
+        dispatch({
+            type: 'set_all_tasks',
+            newTasks: data
+        })
+    })
 
-    useEffect(() => {
-        // weird ...
-
-        if (!tasksWereFetched) {
-            let active = true;
-            const startFetch = async () => {
-                const fetchedTasks = await fetchTasks()
-                if (active) {
-                    dispatch({
-                        type: 'set_all_tasks',
-                        newTasks: fetchedTasks
-                    })
-                    tasksWereFetched = true
-                    console.log('...fetched')
-                }
-            }
-            
-            startFetch()
-            return () => {
-                console.log('CANCEL FETCH')
-                active = false;
-            }
-        }
-    }, [])
 
     const listItems = items.map((item) =>
         <li key={item._id}>
@@ -46,5 +28,33 @@ export function ItemList() {
         </li>
     )
 
-    return <ul>{listItems}</ul>
+    return <>
+        <ul>{listItems}</ul>
+    </>
+}
+
+
+const useTaskData = (onFetched) => {
+    useEffect(() => {
+
+        if (!tasksWereFetched) {
+            let active = true;
+            const startFetch = async () => {
+                const fetchedTasks = await fetchTasks()
+                if (active) {
+                    // setData
+                    console.log(' call onFetched')
+                    onFetched(fetchedTasks)
+                    tasksWereFetched = true
+                    console.log('...fetched')
+                }
+            }
+
+            startFetch()
+            return () => {
+                console.log('CANCEL FETCH')
+                active = false;
+            }
+        }
+    })
 }
